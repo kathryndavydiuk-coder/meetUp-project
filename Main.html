@@ -4,21 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link href="styles/styleMain.css" rel="stylesheet" />
   </head>
   <body>
     <header>
       <div class="container">
-        <div class="greetBox">
-          <span></span>
-          <span></span>
+        <div class="logoBox">
+          <a href="#"><img src="assets/icons/meetUp-logo.svg" alt="logo" /></a>
+        </div>
+        <div class="searchBox">
+          <span><img src="assets/icons/search.svg" alt="search" /></span>
           <input type="text" placeholder="Search events" />
-          <input type="text" placeholder="Mountain View, CA" /><span></span>
+          <input type="text" placeholder="Mountain View, CA" />
+          <button type="button" class="searchBtn">
+            <img src="assets/icons/search.svg" alt="search" />
+          </button>
         </div>
         <div class="buttonsBox">
-          <span></span> <button type="">English</button>
-          <button type="">Log in</button>
-          <button type="">Sign up</button>
+          <div class="languageBox">
+            <span><img src="assets/icons/globus.svg" alt="globus" /></span>
+            <button>English</button>
+          </div>
+
+          <button>Log in</button>
+          <button class="signBtn">Sign up</button>
         </div>
       </div>
     </header>
@@ -35,7 +50,7 @@
             <button>Join Meetup</button>
           </div>
           <div class="imageBox">
-            <img src="" alt="" />
+            <img src="assets/icons/header-image.svg" alt="event-image" />
           </div>
         </div>
       </section>
