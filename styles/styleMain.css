@@ -3,44 +3,64 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
 }
-/* centring all the page*/
+button,
+input {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  border-radius: 8px;
+  white-space: nowrap;
+}
 .container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 11px;
+  max-width: 1196px;
+  margin-inline: auto;
+}
+.changeIcon > h2,
+.headBox > h2,
+.joinText > h3,
+.container > h3,
+.textPopularCities > h2,
+.container > h2,
+.friendshipsHeadBox > h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
 }
 /*===========header=======================*/
 header > .container {
+  max-width: none;
+  margin: 11px;
+}
+header > .container,
+.logoBox,
+.searchBox,
+.buttonsBox,
+.languageBox,
+.buttonsBox span {
   display: flex;
   align-items: center;
 }
-.logoBox {
-  display: flex;
-  align-items: center;
+.logoBox,
+.searchBox,
+.buttonsBox {
   flex-shrink: 0;
+}
+.logoBox {
   margin-right: 40px;
   width: 118px;
   height: 34px;
 }
 .searchBox {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   overflow: hidden;
   width: 594px;
 }
 .searchBox input[type="text"] {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  border: none;
   width: 100%;
   padding: 12px;
 }
@@ -52,53 +72,389 @@ header > .container {
 }
 .searchBtn {
   background-color: #f65858;
-  border-radius: 8px;
-  border: none;
+  color: #ffffff;
   outline: none;
   padding: 14px;
   cursor: pointer;
 }
 .searchBtn > img {
-  color: #ffffff;
   width: 16px;
 }
 .buttonsBox {
-  display: flex;
   margin-left: auto;
-  flex-shrink: 0;
-  align-items: center;
   gap: 22px;
 }
 .languageBox {
-  display: flex;
-  align-items: center;
   gap: 4px;
 }
-.languageBox > button {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  border: none;
-  background-color: #ffffff;
-}
-.buttonsBox span {
-  display: flex;
-  align-items: center;
-}
+.languageBox > button,
 .buttonsBox > button {
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
-  border: none;
   background-color: #ffffff;
-  white-space: nowrap;
 }
+
 .buttonsBox .signBtn {
   color: #ffffff;
   background-color: #00798a;
-  border: none;
-  border-radius: 8px;
   padding: 8px 16px;
-  white-space: nowrap;
+  cursor: pointer;
 }
 /*===============The people platform=========*/
+.hero {
+  margin: 71px;
+}
+.hero > .container {
+  display: flex;
+  gap: 56px;
+}
+h1 {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 52px;
+}
+.textBox > p,
+.joinText > p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.textBox > button {
+  color: #ffffff;
+  background-color: #00798a;
+  padding: 8px 16px;
+  align-self: flex-start;
+  cursor: pointer;
+}
+.textBox {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  gap: 24px;
+}
+.imageBox {
+  width: 379px;
+  height: 269px;
+}
+/*=========Events near + Upcoming events ========*/
+.upComingOnlineEvents {
+  margin-top: 50px;
+}
+.eventsNear {
+  margin-top: 120px;
+}
+.changeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.changeIcon > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: #97cad11f;
+  color: #00798a;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.upTextBox,
+.headBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.upTextBox > a,
+.headBox > a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #00798a;
+}
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 36px;
+  margin-top: 24px;
+}
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.eventsGrid2 {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 36px;
+}
+.eventBadge {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #707070;
+  padding: 2px;
+  font-size: 12px;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.event > h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.subject {
+  color: #707070;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.calendar,
+.free,
+.free > span {
+  display: flex;
+  align-items: center;
+}
+.calendar > span {
+  gap: 6px;
+}
+.calendar {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+}
+.free {
+  font-size: 16px;
+  line-height: 24px;
+  gap: 16px;
+}
+.free > span {
+  gap: 2px;
+}
+/*=========Join Meetup=========*/
+.joinMeetUp {
+  margin-top: 90px;
+}
+.joinCard {
+  background-color: #97cad114;
+  display: flex;
+  justify-content: space-between;
+  gap: 76px;
+}
+.joinText {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 56px;
+  gap: 16px;
+  max-width: 768px;
+}
+.imgBox {
+  padding: 20px 56px;
+}
+.signUpBtn2 {
+  background-color: #e32359;
+  color: #ffffff;
+  padding: 8px 68px;
+  display: flex;
+  align-self: flex-start;
+}
+/*===========Explore top categories==========*/
+.exploreBox {
+  margin-top: 64px;
+}
+.container > h3 {
+  margin-bottom: 24px;
+}
+.allCategories {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #97cad114;
+  text-align: center;
+  flex: 1 1 0;
+  padding: 22px 32px 16px 32px;
+  border-radius: 8px;
+}
+.box > span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+/*============Popular cities on Meetup============*/
+.popularCities {
+  margin-top: 64px;
+}
+.textPopularCities > span {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.textPopularCities > h2 {
+  margin-bottom: 16px;
+}
+.imagesPopularCities {
+  display: flex;
+  gap: 42px;
+  text-align: center;
+  margin-top: 28px;
+}
+.imagesPopularCities > h3 {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+/*============How Meetup works========*/
+.howItWorks {
+  margin-top: 64px;
+}
+.howItWorksBox {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+.subBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #97cad114;
+  padding: 32px 112px 24px 24px;
+  gap: 16px;
+}
+.textsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.textsBox > h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.textsBox > a {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #00798a;
+}
+/*=============Friendships are made on Meetup=========*/
+.friendships {
+  margin-top: 64px;
+}
+.friendshipsHeadBox > span,
+.card > p,
+.card > a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.friendshipsHeadBox > span {
+  margin-top: 16px;
+  color: #707070;
+}
+.friendshipsImagesBox {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 28px;
+}
+.card > p {
+  color: #707070;
+  margin-top: 12px;
+}
+.card > a {
+  color: #00798a;
+  margin-top: 16px;
+}
+.card > h3 {
+  margin-top: 24px;
+}
+/*==========footer==========*/
+footer {
+  margin-top: 54px;
+  margin-bottom: 40px;
+  background-color: #212121;
+}
+.footerTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid#707070;
+  padding: 24px 736px 25px 16px;
+}
+.footerTop > button {
+  padding: 10px 14px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: #212121;
+}
+.footerTop > h2,
+.column > h3,
+h4 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #f6f7f8;
+}
+.navigationGrid {
+  display: flex;
+  margin-top: 24px;
+}
+.column > a {
+  font-size: 14px;
+  line-height: 20px;
+  color: #c5c4c4;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 7px;
+}
+.iconsFollow {
+  display: flex;
+  gap: 32px;
+}
+.storesFollow {
+  display: flex;
+  gap: 12px;
+}
+.follow {
+  display: flex;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  margin-top: 52px;
+  gap: 24px;
+}
+nav > a,
+nav > span {
+  color: #c5c4c4;
+  font-size: 14px;
+  line-height: 20px;
+}
+nav > span {
+  color: #ffffff;
+}
