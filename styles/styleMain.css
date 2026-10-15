@@ -197,7 +197,7 @@ h1 {
 .eventBadge {
   position: absolute;
   top: 5px;
-  left: 10px;
+  left: 12px;
 
   display: flex;
   align-items: center;
@@ -224,13 +224,13 @@ h1 {
 }
 .calendar,
 .free,
+.calendar > span,
 .free > span {
   display: flex;
   align-items: center;
-}
-.calendar > span {
   gap: 6px;
 }
+
 .calendar {
   text-transform: uppercase;
   font-size: 14px;
@@ -241,9 +241,7 @@ h1 {
   line-height: 24px;
   gap: 16px;
 }
-.free > span {
-  gap: 2px;
-}
+
 /*=========Join Meetup=========*/
 .joinMeetUp {
   margin-top: 90px;
@@ -291,8 +289,14 @@ h1 {
   background-color: #97cad114;
   text-align: center;
   flex: 1 1 0;
-  padding: 22px 32px 16px 32px;
+  padding: 22px 28px 16px 28px;
   border-radius: 8px;
+  min-width: 0;
+  gap: 6px;
+}
+.box > img {
+  width: 20px;
+  height: 20px;
 }
 .box > span {
   font-size: 16px;
@@ -396,6 +400,8 @@ footer {
   margin-top: 54px;
   margin-bottom: 40px;
   background-color: #212121;
+  padding-bottom: 40px;
+  padding-top: 16px;
 }
 .footerTop {
   display: flex;
@@ -433,6 +439,7 @@ h4 {
   gap: 7px;
 }
 .iconsFollow {
+  margin-top: 12px;
   display: flex;
   gap: 32px;
 }
@@ -457,4 +464,12 @@ nav > span {
 }
 nav > span {
   color: #ffffff;
+}
+.socialMedia {
+  width: 25px;
+  height: 25px;
+}
+.store {
+  width: 135px;
+  height: 40px;
 }
