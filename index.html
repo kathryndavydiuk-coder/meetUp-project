@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meet Up page</title>
+    <title>Meet Up</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link href="styles/styleMain.css" rel="stylesheet" />
+    <link href="styles/styleIndex.css" rel="stylesheet" />
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logoBox">
-          <a href="#"><img src="assets/icons/meetUp-logo.svg" alt="logo" /></a>
+          <a href="/index.html"
+            ><img src="assets/icons/meetUp-logo.svg" alt="logo"
+          /></a>
         </div>
         <div class="searchBox">
           <span><img src="assets/icons/search.svg" alt="search" /></span>
@@ -47,7 +49,7 @@
               skill sharing, there are thousands of people who share it on
               Meetup. Events are happening every day—sign up to join the fun.
             </p>
-            <button>Join Meetup</button>
+            <button class="filterBtn">Join Meetup</button>
           </div>
           <div class="imageBox">
             <img src="assets/icons/header-image.svg" alt="event-image" />
@@ -55,7 +57,7 @@
         </div>
       </section>
 
-      <section class="eventsNear">
+      <section class="eventsNear onlyDekstop">
         <div class="container">
           <div class="upTextBox">
             <div class="changeIcon">
@@ -245,7 +247,7 @@
         </div>
       </section>
 
-      <section class="upComingOnlineEvents">
+      <section class="upComingOnlineEvents onlyDekstop">
         <div class="container">
           <div class="headBox">
             <h2>Upcoming online events</h2>
@@ -349,6 +351,106 @@
                 <span
                   ><img src="assets/icons/ticket-icon.svg" alt="" />Free</span
                 >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="eventsOnlyMobile">
+        <div class="upTextBox">
+          <div class="changeIcon">
+            <h2>Events near</h2>
+            <button>
+              Mountain View, CA<img
+                src="assets/icons/change-icon.svg"
+                alt="change-icon"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="examplesPart">
+          <div class="eventCard">
+            <div class="cardImage">
+              <img src="assets/images/card1.png" alt="image" />
+            </div>
+            <div class="cardContent">
+              <span>Wed, Mar 13 · 11:30 PM UTC</span>
+              <h3>All Nations - Manhattan Missions Church Bible Study</h3>
+              <span>Hobbies and Passions (5 km)</span>
+            </div>
+          </div>
+          <div class="eventCard">
+            <div class="cardImage">
+              <img src="assets/images/card2.png" alt="image" />
+            </div>
+            <div class="cardContent">
+              <span>Sat, Mar 23 · 3:00 PM UTC</span>
+              <h3>INFJ Personality Type - Coffee Shop Meet & Greet</h3>
+              <span>Hobbies and Passions (25 km)</span>
+              <div class="cardMeta">
+                <span>99 attendees</span>
+              </div>
+            </div>
+          </div>
+          <div class="eventCard">
+            <div class="cardImage">
+              <img src="assets/images/card3.png" alt="image" />
+            </div>
+            <div class="cardContent">
+              <span>Wed, Mar 13 · 11:30 PM UTC</span>
+              <h3>
+                NYC AI Users - AI Tech Talks, Demo & Social: RAG Search and
+                Customer Experience
+              </h3>
+              <span>Technology (50 km)</span>
+              <div class="cardMeta">
+                <span>43 attendees</span>
+                <span class="redString">2 spots left</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="headBox">
+          <h2>Upcoming online events</h2>
+        </div>
+        <div class="examplesPart">
+          <div class="eventCard">
+            <div class="cardImage">
+              <img src="assets/images/card4.png" alt="image" />
+            </div>
+            <div class="cardContent">
+              <span>Wed, Mar 13 · 11:30 PM UTC</span>
+              <h3>Book 40+ Appointments Per Month Using AI and Automation</h3>
+              <span>Technology</span>
+            </div>
+          </div>
+          <div class="eventCard">
+            <div class="cardImage">
+              <img src="assets/images/card5.png" alt="image" />
+            </div>
+            <div class="cardContent">
+              <span>Wed, Mar 13 · 11:00 PM UTC</span>
+              <h3>Dump writing group weekly meetup</h3>
+              <span>Hobbies and Passions</span>
+              <div class="cardMeta">
+                <span>77 attendees</span>
+              </div>
+            </div>
+          </div>
+          <div class="eventCard">
+            <div class="cardImage">
+              <img src="assets/images/card6.png" alt="image" />
+            </div>
+            <div class="cardContent">
+              <span>Thu, Mar 14 · 11:00 PM UTC</span>
+              <h3>
+                Over 40s, 50s, & 60s Senior Singles Chat, Meet & Dating
+                Community
+              </h3>
+              <span>Hobbies and Passions</span>
+              <div class="cardMeta">
+                <span>140 attendees</span>
               </div>
             </div>
           </div>

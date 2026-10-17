@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events near New York, NY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="styles/styleFilters.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logoBox">
+          <a href="/index.html"
+            ><img src="assets/icons/meetUp-logo.svg" alt="logo"
+          /></a>
+        </div>
+        <div class="searchBox">
+          <span><img src="assets/icons/search.svg" alt="search" /></span>
+          <input type="text" placeholder="Search events" />
+          <input type="text" value="Mountain View, CA" />
+          <button type="button" class="searchBtn">
+            <img src="assets/icons/white-search-icon.svg" alt="search" />
+          </button>
+        </div>
+        <div class="buttonsBox">
+          <div class="languageBox">
+            <span><img src="assets/icons/globus.svg" alt="globus" /></span>
+            <button>English</button>
+          </div>
+
+          <button>Log in</button>
+          <button class="signBtn">Sign up</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="sideRight">
+          <div class="topPart">
+            <h1>Events near New York, NY</h1>
+            <span>Events</span>
+            <form class="eventFilters">
+              <select class="filter">
+                <option value="">Any type</option>
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+              </select>
+              <select class="filter">
+                <option value="">Any distance</option>
+                <option value="5">5 km</option>
+                <option value="10">10 km</option>
+                <option value="15">15 km</option>
+                <option value="25">25 km</option>
+                <option value="50">50 km</option>
+                <option value="75">75 km</option>
+                <option value="100">100 km</option>
+              </select>
+              <select class="filter">
+                <option value="">Any category</option>
+                <option value="Social Activities">Social Activities</option>
+                <option value="Hobbies and Passions">
+                  Hobbies and Passions
+                </option>
+                <option value="Health and Wellbeing">
+                  Health and Wellbeing
+                </option>
+                <option value="Business">Business</option>
+                <option value="Technology">Technology</option>
+              </select>
+              <select class="filter">
+                <option value="">Any day</option>
+                <option value="2024-03-13">Mar 13</option>
+                <option value="2024-03-14">Mar 14</option>
+                <option value="2024-03-16">Mar 16</option>
+                <option value="2024-03-23">Mar 23</option>
+              </select>
+            </form>
+          </div>
+          <div class="examplesPart">
+            <div class="eventCard">
+              <div class="cardImage">
+                <img src="assets/images/card1.png" alt="image" />
+              </div>
+              <div class="cardContent">
+                <span>Wed, Mar 13 · 11:30 PM UTC</span>
+                <h3>All Nations - Manhattan Missions Church Bible Study</h3>
+                <span>Hobbies and Passions (5 km)</span>
+              </div>
+            </div>
+            <div class="eventCard">
+              <div class="cardImage">
+                <img src="assets/images/card2.png" alt="image" />
+              </div>
+              <div class="cardContent">
+                <span>Sat, Mar 23 · 3:00 PM UTC</span>
+                <h3>INFJ Personality Type - Coffee Shop Meet & Greet</h3>
+                <span>Hobbies and Passions (25 km)</span>
+                <div class="cardMeta">
+                  <span>99 attendees</span>
+                </div>
+              </div>
+            </div>
+            <div class="eventCard">
+              <div class="cardImage">
+                <img src="assets/images/card3.png" alt="image" />
+              </div>
+              <div class="cardContent">
+                <span>Wed, Mar 13 · 11:30 PM UTC</span>
+                <h3>
+                  NYC AI Users - AI Tech Talks, Demo & Social: RAG Search and
+                  Customer Experience
+                </h3>
+                <span>Technology (50 km)</span>
+                <div class="cardMeta">
+                  <span>43 attendees</span>
+                  <span class="redString">2 spots left</span>
+                </div>
+              </div>
+            </div>
+            <div class="eventCard">
+              <div class="cardImage">
+                <img src="assets/images/card4.png" alt="image" />
+                <span class="eventBadge">
+                  <img src="assets/icons/camera-icon.svg" alt="" />
+                  Online Event
+                </span>
+              </div>
+              <div class="cardContent">
+                <span>Wed, Mar 13 · 11:30 PM UTC</span>
+                <h3>Book 40+ Appointments Per Month Using AI and Automation</h3>
+                <span>Technology</span>
+              </div>
+            </div>
+            <div class="eventCard">
+              <div class="cardImage">
+                <img src="assets/images/card5.png" alt="image" />
+                <span class="eventBadge">
+                  <img src="assets/icons/camera-icon.svg" alt="" />
+                  Online Event
+                </span>
+              </div>
+              <div class="cardContent">
+                <span>Wed, Mar 13 · 11:00 PM UTC</span>
+                <h3>Dump writing group weekly meetup</h3>
+                <span>Hobbies and Passions</span>
+                <div class="cardMeta">
+                  <span>77 attendees</span>
+                </div>
+              </div>
+            </div>
+            <div class="eventCard">
+              <div class="cardImage">
+                <img src="assets/images/card6.png" alt="image" />
+                <span class="eventBadge">
+                  <img src="assets/icons/camera-icon.svg" alt="" />
+                  Online Event
+                </span>
+              </div>
+              <div class="cardContent">
+                <span>Thu, Mar 14 · 11:00 PM UTC</span>
+                <h3>
+                  Over 40s, 50s, & 60s Senior Singles Chat, Meet & Dating
+                  Community
+                </h3>
+                <span>Hobbies and Passions</span>
+                <div class="cardMeta">
+                  <span>140 attendees</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sideLeft">
+          <span>Find events near</span>
+          <h2>New York, NY</h2>
+          <div class="map">
+            <img src="assets/icons/x-icon.svg" alt="" />
+            <button>
+              Browse in map<img src="assets/icons/2-arrows-icon.svg" alt="" />
+            </button>
+            <div id="map-container" class="is-blurred"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footerTop">
+          <h2>Create your own Meetup group.</h2>
+          <button>Get Started</button>
+        </div>
+        <div class="navigationGrid">
+          <div class="column">
+            <h3>Your Account</h3>
+            <a>Sign up</a>
+            <a>Log in</a>
+            <a>Help</a>
+            <a>Become an Affiliate</a>
+          </div>
+          <div class="column">
+            <h3>Discover</h3>
+            <a>Groups</a>
+            <a>Calendar</a>
+            <a>Topics</a>
+            <a>Cities</a>
+            <a>Online Events</a>
+            <a>Local Guides</a>
+            <a>Make Friends</a>
+          </div>
+          <div class="column">
+            <h3>Meetup</h3>
+            <a>About</a>
+            <a>Blog</a>
+            <a>Meetup Pro</a>
+            <a>Careers</a>
+            <a>Apps</a>
+            <a>Podcast</a>
+          </div>
+        </div>
+        <h4>Follow us</h4>
+        <div class="follow">
+          <div class="iconsFollow">
+            <img class="socialMedia" src="assets/icons/facebook.svg" alt="" />
+            <img class="socialMedia" src="assets/icons/twitter.svg" alt="" />
+            <img class="socialMedia" src="assets/icons/youtube.svg" alt="" />
+            <img class="socialMedia" src="assets/icons/instagram.svg" alt="" />
+            <img class="socialMedia" src="assets/icons/tiktok.svg" alt="" />
+          </div>
+          <div class="storesFollow">
+            <img class="store" src="assets/icons/googlePlay.svg" alt="" />
+            <img class="store" src="assets/icons/appStore.svg" alt="" />
+          </div>
+        </div>
+        <nav>
+          <span>© 2024 Meetup</span>
+          <a>Terms of Service</a>
+          <a>Privacy Policy</a>
+          <a>Do Not Sell or Share My Personal Data</a>
+          <a>Cookie Policy</a>
+          <a>Help</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+  <script src="scripts/script.js"></script>
+</html>

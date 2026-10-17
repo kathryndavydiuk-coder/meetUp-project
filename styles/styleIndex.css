@@ -28,6 +28,9 @@ input {
   font-size: 28px;
   line-height: 36px;
 }
+.eventsOnlyMobile {
+  display: none;
+}
 /*===========header=======================*/
 header > .container {
   max-width: none;
@@ -56,7 +59,9 @@ header > .container,
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   overflow: hidden;
-  width: 594px;
+  flex: 1 1 594px; /* Гнучкий, базова ширина 594px, але може стискатися */
+  max-width: 594px;
+  min-width: 0; /* Дозволяє стискатися всередині flex-контейнера */
 }
 .searchBox input[type="text"] {
   font-weight: 400;
@@ -128,7 +133,9 @@ h1 {
 .textBox {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  flex: 1 1 600px;
+  max-width: 600px;
+  min-width: 0;
   gap: 24px;
 }
 .imageBox {
@@ -215,6 +222,10 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
+}
+.event > img {
+  width: 272px;
+  height: 153px;
 }
 .subject {
   color: #707070;
@@ -322,7 +333,7 @@ h1 {
   text-align: center;
   margin-top: 28px;
 }
-.imagesPopularCities > h3 {
+.imagesPopularCities h3 {
   margin-top: 24px;
   font-size: 20px;
   font-weight: 600;
@@ -408,7 +419,7 @@ footer {
   align-items: center;
   gap: 16px;
   border-bottom: 1px solid#707070;
-  padding: 24px 736px 25px 16px;
+  padding: 24px 16px;
 }
 .footerTop > button {
   padding: 10px 14px;
@@ -472,4 +483,174 @@ nav > span {
 .store {
   width: 135px;
   height: 40px;
+}
+/*========================================================
+=================================adaptiv==================*/
+@media (max-width: 1220px) {
+  .container {
+    padding-inline: 24px;
+  }
+  /*хедер*/
+  .searchBox input[type="text"] + input[type="text"] {
+    display: none;
+  }
+  /*хиро */
+  .hero {
+    margin: 48px 0;
+  }
+  .hero > .container {
+    gap: 24px;
+  }
+  .textBox {
+    width: 100%;
+    margin-inline: auto;
+  }
+  .imageBox {
+    width: 100%;
+    max-width: 379px;
+    height: auto;
+    margin-inline: auto;
+  }
+  .imageBox > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /*event grid*/
+  .eventsGrid,
+  .eventsGrid2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 36px;
+    row-gap: 36px;
+  }
+  /*explpre categories*/
+  .allCategories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .box {
+    flex: none;
+    padding: 16px 8px;
+  }
+  /*join meetup*/
+  .joinCard {
+    gap: 32px;
+  }
+
+  .joinText {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+  /*popular cities*/
+  .imagesPopularCities {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-around;
+  }
+  /*how it works*/
+  .subBox {
+    padding: 24px;
+    flex: 1 1 0;
+  }
+  /*friends*/
+  .friendshipsImagesBox {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .card {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+  .card > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /*footer*/
+  .footerTop {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 890px) {
+  .onlyDekstop {
+    display: none;
+  }
+  .eventsOnlyMobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  /*header*/
+  header > .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 11px;
+  }
+  .logoBox {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+  .buttonsBox {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+  .searchBox {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 100%;
+  }
+  .languageBox button,
+  .buttonsBox > button,
+  .textBox > p {
+    font-size: 12px;
+  }
+  /*hero*/
+  .hero > .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 25px;
+    line-height: 30.5px;
+  }
+  .textBox {
+    flex: none;
+    gap: 10px;
+  }
+  .textBox > button {
+    display: none;
+  }
+  .imageBox {
+    display: flex;
+    justify-content: center;
+  }
+  .imageBox > img {
+    width: 215px;
+    height: 152px;
+  }
+  /*events*/
+  .upTextBox > a {
+    display: none;
+  }
+  .changeIcon button {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .changeIcon > h2 {
+    font-size: 20px;
+    line-height: 25px;
+  }
 }
