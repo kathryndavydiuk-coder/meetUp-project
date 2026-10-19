@@ -556,19 +556,13 @@ nav > span {
   }
   /*friends*/
   .friendshipsImagesBox {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-  }
-  .card {
-    min-width: 0;
-    overflow-wrap: break-word;
+    flex-direction: column;
   }
   .card > img {
     width: 100%;
     height: auto;
-    display: block;
   }
+
   /*footer*/
   .footerTop {
     padding: 24px 16px;
@@ -712,19 +706,33 @@ nav > span {
   }
 
   /*popular cities*/
+  .textPopularCities > span {
+    font-size: 12px;
+    line-height: 24px;
+  }
   .imagesPopularCities {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(2, 2fr);
+    column-gap: 18px;
+    row-gap: 18px;
+    justify-content: initial;
   }
-  .city > img {
-    /* width: 175px;
-    height: 175px; */
+  .city {
+    min-width: 0;
   }
   .miami {
     display: none;
   }
-
+  .city > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .city > h3 {
+    font-size: 15px;
+    line-height: 21px;
+  }
   /*how it works*/
   .howItWorksBox {
     flex-direction: column;
@@ -751,6 +759,12 @@ nav > span {
   .footerTop > h2 {
     padding-bottom: 24px;
     border-bottom: 1px solid #707070;
+  }
+  .storesFollow {
+    display: none;
+  }
+  nav > a {
+    display: none;
   }
 }
 
@@ -821,50 +835,50 @@ nav > span {
     height: 152px;
   }
   /*events*/
-  .upTextBox > a {
-    display: none;
+  .eventsOnlyMobile {
+    display: flex;
+    flex-direction: column;
   }
-  .changeIcon button {
-    font-size: 14px;
-    line-height: 16px;
+  .container {
+    padding-inline: 16px;
   }
   .examplesPart {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 24px;
     margin-top: 20px;
   }
   .headBox {
-    margin-top: 15px;
+    margin-top: 24px;
   }
   .eventCard {
     display: flex;
-    gap: 8px;
+    gap: 12px;
   }
   .cardContent {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
   }
   .cardContent > span {
-    font-size: 9px;
-    line-height: 13px;
+    font-size: 12px;
+    line-height: 16px;
     font-weight: 500;
     color: #7c6f50;
   }
   .cardContent h3 {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 22px;
     font-weight: 500;
   }
   .cardMeta {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 28px;
-    font-size: 9px;
+    margin-top: 12px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 12px;
+    line-height: 16px;
     color: #707070;
   }
   .redString {
@@ -872,13 +886,13 @@ nav > span {
   }
   .eventBadge {
     position: static;
-    font-size: 8px;
-    line-height: 10px;
-    gap: 2px;
+    font-size: 11px;
+    line-height: 14px;
+    gap: 3px;
   }
   .eventBadge > img {
-    width: 9px;
-    height: 7px;
+    width: 12px;
+    height: 10px;
   }
   /*join Meetup*/
   .joinCard {
@@ -922,13 +936,18 @@ nav > span {
     grid-template-rows: repeat(2, 2fr);
     column-gap: 18px;
     row-gap: 18px;
+    justify-content: initial;
+  }
+  .city {
+    min-width: 0;
   }
   .miami {
     display: none;
   }
   .city > img {
-    width: 154px;
-    height: 154px;
+    width: 100%;
+    height: auto;
+    display: block;
   }
   .city > h3 {
     font-size: 15px;
