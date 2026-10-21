@@ -65,16 +65,16 @@ const eventsStore = [
     distance: 15,
   },
 ];
+const goBtn = document.querySelector(".filterBtn");
 const filterForm = document.querySelector(".eventFilters");
-const selects = filterForm.querySelectorAll(".filter");
 const examplesContainer = document.querySelector(".examplesPart");
-
-const NY_COORDS = [40.7128, -74.006];
-const INITIAL_ZOOM = 13;
 const mapContainer = document.getElementById("map-container");
 const mapButton = document.querySelector(".map button");
 const closeMapIcon = document.querySelector(".map > img");
+const selects = filterForm ? filterForm.querySelectorAll(".filter") : [];
 
+const NY_COORDS = [40.7128, -74.006];
+const INITIAL_ZOOM = 13;
 function initMap() {
   const map = L.map("map-container").setView(NY_COORDS, INITIAL_ZOOM);
 
@@ -180,17 +180,22 @@ function renderEvents(events) {
   });
 }
 
-const map = initMap();
+let map = null;
+if (mapContainer && typeof L !== "undefined") {
+  map = initMap();
+}
 
-if (mapButton) {
-  mapButton.addEventListener("click", () => {
-    openMap(map);
-  });
+if (mapButton && map) {
+  mapButton.addEventListener("click", () => openMap(map));
 }
 if (closeMapIcon) {
-  closeMapIcon.addEventListener("click", () => {
-    closeMap();
+  closeMapIcon.addEventListener("click", closeMap);
+}
+if (filterForm) {
+  filterForm.addEventListener("change", handleFilterChange); // ✅ ОДИН раз, з guard
+}
+if (goBtn) {
+  goBtn.addEventListener("click", () => {
+    window.location.href = "filteredPage.html";
   });
 }
-
-filterForm.addEventListener("change", handleFilterChange);
