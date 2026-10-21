@@ -1,4 +1,3 @@
-const filterBtn = document.querySelector(".filterBtn");
 const eventsStore = [
   {
     title: "INFJ Personality Type - Coffee Shop Meet & Greet",
@@ -66,59 +65,132 @@ const eventsStore = [
     distance: 15,
   },
 ];
+const filterForm = document.querySelector(".eventFilters");
+const selects = filterForm.querySelectorAll(".filter");
+const examplesContainer = document.querySelector(".examplesPart");
 
-filterBtn.addEventListener("click", () => {
-  location.pathname = "/filteredPage.html";
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const mapContainer = document.getElementById("map-container");
+const NY_COORDS = [40.7128, -74.006];
+const INITIAL_ZOOM = 13;
+const mapContainer = document.getElementById("map-container");
+const mapButton = document.querySelector(".map button");
+const closeMapIcon = document.querySelector(".map > img");
 
-  // Знаходимо елементи всередині .map
-  const mapBlock = document.querySelector(".sideLeft .map");
-  const browseBtn = mapBlock.querySelector("button");
-  const closeBtn = mapBlock.querySelector("img");
+function initMap() {
+  const map = L.map("map-container").setView(NY_COORDS, INITIAL_ZOOM);
 
-  if (!mapContainer || !browseBtn || !closeBtn) return;
-
-  // 1. Ініціалізація карти
-  const map = L.map("map-container", {
-    scrollWheelZoom: false,
-    dragging: false,
-    zoomControl: false,
-    attributionControl: false,
-  }).setView([40.7128, -74.006], 12);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors",
   }).addTo(map);
 
-  // 2. Клік на "Browse in map"
-  browseBtn.addEventListener("click", () => {
-    // Ховаємо кнопку
-    browseBtn.style.display = "none";
+  const marker = L.marker(NY_COORDS).addTo(map);
+  marker.bindPopup("<b>New York, NY</b>").openPopup();
 
-    // Показуємо хрестик (через клас, який ми прописали в CSS)
-    closeBtn.classList.add("is-visible");
+  return map; // Повертаємо об'єкт карти, щоб керувати ним далі
+}
+function openMap(mapInstance) {
+  mapContainer.classList.remove("is-blurred");
+  mapButton.style.display = "none";
+  mapInstance.invalidateSize(); // Оновлює розміри Leaflet
+}
+function closeMap() {
+  mapContainer.classList.add("is-blurred");
+  if (mapButton) {
+    mapButton.style.display = "flex";
+  }
+}
 
-    // Знімаємо блюр з карти
-    mapContainer.classList.remove("is-blurred");
+function formatDateToYYYYMMDD(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+function handleFilterChange() {
+  const selectedType = selects[0].value;
+  const selectedDistance = selects[1].value;
+  const selectedCategory = selects[2].value;
+  const selectedDate = selects[3].value;
 
-    // Вмикаємо інтерактивність
-    map.dragging.enable();
-    map.scrollWheelZoom.enable();
-    L.control.zoom({ position: "bottomright" }).addTo(map);
+  const filteredEvents = eventsStore.filter((event) => {
+    if (selectedType && event.type !== selectedType) {
+      return false;
+    }
 
-    // Оновлюємо розміри (щоб карта не була з сірими кутами)
-    setTimeout(() => map.invalidateSize(), 300);
+    if (selectedDistance && event.distance > Number(selectedDistance)) {
+      return false;
+    }
+
+    if (selectedCategory && event.category !== selectedCategory) {
+      return false;
+    }
+
+    if (selectedDate) {
+      const eventDateStr = formatDateToYYYYMMDD(event.date);
+      if (eventDateStr !== selectedDate) {
+        return false;
+      }
+    }
+    return true;
   });
+  renderEvents(filteredEvents);
+}
+function renderEvents(events) {
+  examplesContainer.innerHTML = "";
 
-  // 3. Клік на хрестик (повертає все як було)
-  closeBtn.addEventListener("click", () => {
-    closeBtn.classList.remove("is-visible");
-    browseBtn.style.display = "flex"; // Повертаємо кнопку
+  if (events.length === 0) {
+    examplesContainer.innerHTML =
+      "<p>No events found matching your criteria.</p>";
+    return;
+  }
 
-    mapContainer.classList.add("is-blurred");
-    map.dragging.disable();
-    map.scrollWheelZoom.disable();
+  events.forEach((event) => {
+    const cardHtml = `
+      <div class="eventCard">
+        <div class="cardImage">
+          <img src="${event.image}" alt="image" />
+          ${
+            event.type === "online"
+              ? `
+            <span class="eventBadge">
+              <img src="assets/icons/camera-icon.svg" alt="" />
+              Online Event
+            </span>
+          `
+              : ""
+          }
+        </div>
+        <div class="cardContent">
+          <span>${event.date.toUTCString()}</span>
+          <h3>${event.title}</h3>
+          <span>${event.category} ${event.distance ? `(${event.distance} km)` : ""}</span>
+          ${
+            event.attendees
+              ? `
+            <div class="cardMeta">
+              <span>${event.attendees} attendees</span>
+            </div>
+          `
+              : ""
+          }
+        </div>
+      </div>
+    `;
+    examplesContainer.insertAdjacentHTML("beforeend", cardHtml);
   });
-});
+}
+
+const map = initMap();
+
+if (mapButton) {
+  mapButton.addEventListener("click", () => {
+    openMap(map);
+  });
+}
+if (closeMapIcon) {
+  closeMapIcon.addEventListener("click", () => {
+    closeMap();
+  });
+}
+
+filterForm.addEventListener("change", handleFilterChange);

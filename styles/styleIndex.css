@@ -549,6 +549,15 @@ nav > span {
     gap: 24px;
     justify-content: space-around;
   }
+  .city {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .city > img {
+    width: 100%;
+    max-width: 200px;
+  }
   /*how it works*/
   .subBox {
     padding: 24px;
@@ -561,6 +570,7 @@ nav > span {
   .card > img {
     width: 100%;
     height: auto;
+    max-width: 450px;
   }
 
   /*footer*/
@@ -575,6 +585,27 @@ nav > span {
   .onlyDekstop {
     display: none;
   }
+  .changeIcon > h2,
+  .headBox > h2,
+  .joinText > h3,
+  .container > h3,
+  .textPopularCities > h2,
+  .container > h2,
+  .friendshipsHeadBox > h2 {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  .languageBox button,
+  .buttonsBox > button,
+  .textBox > p,
+  .textPopularCities > span,
+  .card > a,
+  .card > p {
+    font-size: 15px;
+    line-height: 29px;
+  }
+
   /*header */
   header > .container {
     display: grid;
@@ -596,28 +627,36 @@ nav > span {
     grid-row: 2;
     max-width: 70%;
   }
-  .languageBox button,
-  .buttonsBox > button,
-  .textBox > p {
-    font-size: 12px;
-  }
+
   /*hero*/
   .hero > .container {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 36px;
   }
   .textBox {
     flex: none;
     max-width: 100%;
+    gap: 10px;
     align-items: center;
     text-align: center;
   }
+
   .textBox > button {
     display: none;
   }
   .imageBox {
     display: flex;
     justify-content: center;
+  }
+
+  .imageBox > img {
+    width: 215px;
+    height: 152px;
   }
   /*events*/
   .eventsOnlyMobile {
@@ -626,6 +665,14 @@ nav > span {
   }
   .container {
     padding-inline: 16px;
+  }
+  .changeIcon > button {
+    font-size: 17px;
+    line-height: 20px;
+  }
+  .cardImage > img {
+    width: 130px; /*=======*/
+    height: 85px;
   }
   .examplesPart {
     display: flex;
@@ -645,26 +692,29 @@ nav > span {
     flex-direction: column;
     gap: 6px;
   }
-  .cardContent > span {
-    font-size: 12px;
-    line-height: 16px;
+  .cardContent span {
+    font-size: 16px;
+    line-height: 20px;
     font-weight: 500;
     color: #7c6f50;
+    overflow-wrap: break-word;
   }
   .cardContent h3 {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 19px;
     font-weight: 500;
+    overflow-wrap: break-word;
   }
   .cardMeta {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-top: 12px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 20px;
     color: #707070;
+    flex-wrap: wrap;
   }
   .redString {
     color: #e32359;
@@ -697,6 +747,28 @@ nav > span {
   .imgBox {
     padding: 20px 24px;
   }
+  .imgBox > img {
+    width: 238px;
+    height: 136px;
+  }
+
+  .joinText {
+    max-width: 100%;
+    padding: 24px;
+    align-items: center;
+    text-align: center;
+  }
+  .signUpBtn2 {
+    align-self: center;
+  }
+  .joinText > h3 {
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 36px;
+  }
+  .imgBox {
+    padding: 20px 24px;
+  }
 
   /*categories*/
   .allCategories {
@@ -706,10 +778,6 @@ nav > span {
   }
 
   /*popular cities*/
-  .textPopularCities > span {
-    font-size: 12px;
-    line-height: 24px;
-  }
   .imagesPopularCities {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
@@ -738,9 +806,23 @@ nav > span {
     flex-direction: column;
     gap: 16px;
   }
+  .iconBox > img {
+    width: 25px;
+    height: 25px;
+  }
+
   .subBox {
     width: 100%;
     justify-content: flex-start;
+  }
+  .subBox > .textsBox > h3 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .textsBox > span,
+  .textsBox > a {
+    font-size: 13px;
+    line-height: 18px;
   }
 
   /*friendships*/
@@ -751,14 +833,20 @@ nav > span {
     width: 100%;
     height: auto;
   }
-
+  .card > h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
   /*footer*/
   .footerTop {
     border-bottom: none;
   }
   .footerTop > h2 {
-    padding-bottom: 24px;
+    padding-bottom: 35px;
     border-bottom: 1px solid #707070;
+  }
+  .footerTop > button {
+    align-self: flex-start;
   }
   .storesFollow {
     display: none;
@@ -776,143 +864,49 @@ nav > span {
   .joinText > h3,
   .container > h3,
   .textPopularCities > h2,
-  .textsBox > h3,
   .container > h2,
   .friendshipsHeadBox > h2 {
-    font-weight: 600;
     font-size: 20px;
-    line-height: 36px;
+    line-height: 25px;
+  }
+  .languageBox button,
+  .buttonsBox > button,
+  .textBox > p,
+  .textPopularCities > span,
+  .card > a,
+  .card > p {
+    font-size: 12px;
+    line-height: 24px;
   }
   /*header*/
-  header > .container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 11px;
-  }
-  .logoBox {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-  }
-  .buttonsBox {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-  }
   .searchBox {
     grid-column: 1 / -1;
     grid-row: 2;
     max-width: 100%;
   }
-  .languageBox button,
-  .buttonsBox > button,
-  .textBox > p {
-    font-size: 12px;
-  }
   /*hero*/
-  .hero > .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
   h1 {
     font-size: 25px;
-    line-height: 30.5px;
-  }
-  .textBox {
-    flex: none;
-    gap: 10px;
-  }
-  .textBox > button {
-    display: none;
-  }
-  .imageBox {
-    display: flex;
-    justify-content: center;
-  }
-  .imageBox > img {
-    width: 215px;
-    height: 152px;
+    line-height: 31px;
   }
   /*events*/
-  .eventsOnlyMobile {
-    display: flex;
-    flex-direction: column;
+
+  .changeIcon > button {
+    font-size: 14px;
+    line-height: 17px;
   }
-  .container {
-    padding-inline: 16px;
+  .cardImage > img {
+    width: 98px;
+    height: 65px;
   }
-  .examplesPart {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 20px;
-  }
-  .headBox {
-    margin-top: 24px;
-  }
-  .eventCard {
-    display: flex;
-    gap: 12px;
-  }
-  .cardContent {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .cardContent > span {
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 500;
-    color: #7c6f50;
+  .cardContent span,
+  .cardMeta {
+    font-size: 9px;
+    line-height: 13px;
   }
   .cardContent h3 {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-  }
-  .cardMeta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 12px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    color: #707070;
-  }
-  .redString {
-    color: #e32359;
-  }
-  .eventBadge {
-    position: static;
-    font-size: 11px;
-    line-height: 14px;
-    gap: 3px;
-  }
-  .eventBadge > img {
-    width: 12px;
-    height: 10px;
-  }
-  /*join Meetup*/
-  .joinCard {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-  }
-  .joinText {
-    justify-content: center;
-    align-items: center;
-  }
-  .signUpBtn2 {
-    align-self: center;
-  }
-  .joinText > h3 {
-    line-height: 25px;
-  }
-  .imgBox > img {
-    width: 238px;
-    height: 136px;
+    font-size: 10px;
+    line-height: 15px;
   }
   /*explore categoories*/
   .allCategories {
@@ -926,10 +920,6 @@ nav > span {
   }
   /*popular cities*/
 
-  .textPopularCities > span {
-    font-size: 12px;
-    line-height: 24px;
-  }
   .imagesPopularCities {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
@@ -954,18 +944,6 @@ nav > span {
     line-height: 21px;
   }
   /*how meetup works*/
-  .howItWorksBox {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .iconBox > img {
-    width: 25px;
-    height: 25px;
-  }
-  .subBox > .textsBox > h3 {
-    font-size: 12px;
-    line-height: 15px;
-  }
   .textsBox > span,
   .textsBox > a {
     font-size: 10px;
@@ -975,34 +953,9 @@ nav > span {
   .friendshipsHeadBox > span {
     display: none;
   }
-  .friendshipsImagesBox {
-    display: flex;
-    flex-direction: column;
-  }
+
   .card > h3 {
     font-size: 16px;
     line-height: 27px;
-  }
-  .card > a,
-  .card > p {
-    font-size: 12px;
-    line-height: 23px;
-  }
-  /*footer*/
-  .footerTop {
-    border-bottom: none;
-  }
-  .footerTop > h2 {
-    padding-bottom: 35px;
-    border-bottom: 1px solid#707070;
-  }
-  .footerTop > button {
-    align-self: flex-start;
-  }
-  .storesFollow {
-    display: none;
-  }
-  nav > a {
-    display: none;
   }
 }
