@@ -1,0 +1,254 @@
+/*=========Events near + Upcoming events ========*/
+.eventsNear {
+  margin-top: 120px;
+}
+.changeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.changeIcon > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: #97cad11f;
+  color: #00798a;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.upTextBox,
+.headBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.upTextBox > a,
+.headBox > a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #00798a;
+}
+.eventsBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 36px;
+  margin-top: 24px;
+}
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.eventImage {
+  width: 272px;
+  height: 153px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.upComingOnlineEvents {
+  margin-top: 50px;
+}
+.onlineEventsBox {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 36px;
+}
+.eventBadge {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #707070;
+  padding: 2px;
+  font-size: 12px;
+  gap: 4px;
+  font-weight: 500;
+}
+.redString {
+  color: #e32359;
+}
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cardContent > h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.subject {
+  color: #707070;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.calendar,
+.free,
+.calendar > time,
+.free > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+}
+.free {
+  font-size: 16px;
+  line-height: 24px;
+  gap: 16px;
+}
+.eventOnline {
+  display: none;
+}
+.cardMeta {
+  display: none;
+}
+
+/*1220*/
+@media (max-width: 1280px) {
+  .eventsBox,
+  .onlineEventsBox {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 36px;
+    row-gap: 36px;
+  }
+}
+
+/*890*/
+@media (max-width: 890px) {
+  .container {
+    padding-inline: 16px;
+  }
+  .changeIcon > button {
+    font-size: 17px;
+    line-height: 20px;
+  }
+  .changeIcon > a {
+    display: none;
+  }
+  .eventsBox,
+  .onlineEventsBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .eventsBox .event,
+  .onlineEventsBox .event {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .event {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #d9d9d9;
+    padding-top: 20px;
+  }
+  .eventImage {
+    width: 159px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .examplesPart {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .headBox {
+    margin-top: 24px;
+  }
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-wrap: break-word;
+    min-width: 0;
+  }
+  .cardContent time {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #7c6f50;
+    order: 1;
+  }
+  .subject {
+    order: 3;
+  }
+  .cardContent h3 {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 500;
+    overflow-wrap: break-word;
+    order: 2;
+  }
+
+  .cardMeta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #707070;
+    flex-wrap: wrap;
+    order: 4;
+  }
+  .eventBadge,
+  .free,
+  .calendar img {
+    display: none;
+  }
+  .eventBadge {
+    position: static;
+    font-size: 11px;
+    line-height: 14px;
+    gap: 3px;
+  }
+  .eventBadge > img {
+    width: 12px;
+    height: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .changeIcon > button {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .cardImage > img {
+    width: 98px;
+    height: 65px;
+  }
+  .cardContent time,
+  .cardMeta {
+    font-size: 9px;
+    line-height: 13px;
+  }
+  .cardContent h3 {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}

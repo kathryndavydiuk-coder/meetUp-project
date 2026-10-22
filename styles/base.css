@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+button,
+input {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  border-radius: 8px;
+}
+.container {
+  max-width: 1196px;
+  margin-inline: auto;
+}
+/*===========header=======================*/
+header > .container {
+  max-width: none;
+  margin: 11px;
+  gap: 12px;
+}
+header > .container,
+.logoBox,
+.searchBox,
+.buttonsBox,
+.languageBox,
+.buttonsBox span {
+  display: flex;
+  align-items: center;
+}
+.logoBox,
+.searchBox,
+.buttonsBox {
+  flex-shrink: 0;
+}
+.logoBox {
+  margin-right: 40px;
+  width: 118px;
+  height: 34px;
+}
+.searchBox {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1 1 594px;
+  max-width: 594px;
+  min-width: 0;
+}
+.searchBox input[type="text"] {
+  font-weight: 400;
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+}
+.searchBox input[type="text"] + input[type="text"] {
+  border-left: 1px solid #d9d9d9;
+}
+.searchBox > span {
+  padding: 10px;
+}
+.searchBtn {
+  background-color: #f65858;
+  color: #ffffff;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.searchBtn > img {
+  width: 16px;
+}
+.buttonsBox {
+  margin-left: auto;
+  gap: 22px;
+}
+.languageBox {
+  gap: 4px;
+}
+.languageBox > button,
+.buttonsBox > button {
+  font-weight: 500;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.buttonsBox .signBtn {
+  color: #ffffff;
+  background-color: #00798a;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/*==========footer==========*/
+footer {
+  margin-top: 54px;
+  background-color: #212121;
+  gap: 16px;
+  border-bottom: 1px solid#707070;
+  padding: 24px 16px;
+}
+.footerTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid#707070;
+  padding: 24px 16px;
+}
+.footerTop > button {
+  padding: 10px 14px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: #212121;
+}
+.footerTop > h2,
+.column > h3,
+h4 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #f6f7f8;
+}
+.navigationGrid {
+  display: flex;
+  margin-top: 24px;
+}
+.column > a {
+  font-size: 14px;
+  line-height: 20px;
+  color: #c5c4c4;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 7px;
+}
+.iconsFollow {
+  margin-top: 12px;
+  display: flex;
+  gap: 32px;
+}
+.storesFollow {
+  display: flex;
+  gap: 12px;
+}
+.follow {
+  display: flex;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  margin-top: 52px;
+  gap: 24px;
+}
+nav > a,
+nav > span {
+  color: #c5c4c4;
+  font-size: 14px;
+  line-height: 20px;
+}
+nav > span {
+  color: #ffffff;
+}
+.socialMedia {
+  width: 25px;
+  height: 25px;
+}
+.store {
+  width: 135px;
+  height: 40px;
+}
+
+@media (max-width: 1220px) {
+  .container {
+    padding-inline: 24px;
+  }
+  /*header*/
+  .searchBox input[type="text"] + input[type="text"] {
+    display: none;
+  }
+  /*footer*/
+  .footerTop {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+}
+@media (max-width: 890px) {
+  .searchBox input[type="text"] + input[type="text"] {
+    display: none;
+  }
+  .container {
+    padding-inline: 24px;
+  }
+  .languageBox button,
+  .buttonsBox > button {
+    font-size: 15px;
+    line-height: 29px;
+  }
+  /*header*/
+  header > .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 11px;
+  }
+  .logoBox {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+  .buttonsBox {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+  .searchBox {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 70%;
+  }
+  /*footer*/
+  .footerTop {
+    border-bottom: none;
+  }
+  .footerTop > h2 {
+    padding-bottom: 35px;
+    border-bottom: 1px solid #707070;
+  }
+  .footerTop > button {
+    align-self: flex-start;
+  }
+  .storesFollow {
+    display: none;
+  }
+  nav > a {
+    display: none;
+  }
+}
+
+/*=========================== ≤ 390px ============================*/
+@media (max-width: 390px) {
+  .languageBox button,
+  .buttonsBox > button {
+    font-size: 12px;
+    line-height: 24px;
+  }
+  /*header*/
+  .searchBox {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 100%;
+  }
+}

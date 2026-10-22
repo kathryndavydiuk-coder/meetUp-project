@@ -1,119 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: "Roboto", sans-serif;
-}
-button,
-input {
-  font-family: "Roboto", sans-serif;
-  border: none;
-  border-radius: 8px;
-  white-space: nowrap;
-}
-.container {
-  max-width: 1196px;
-  margin-inline: auto;
-}
-.changeIcon > h2,
-.headBox > h2,
-.joinText > h3,
-.container > h3,
-.textPopularCities > h2,
-.container > h2,
-.friendshipsHeadBox > h2 {
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 36px;
-}
 main > .container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   gap: 268px;
   margin-top: 88px;
 }
-/*===========header=======================*/
-header > .container {
-  max-width: none;
-  margin: 11px;
-}
-header > .container,
-.logoBox,
-.searchBox,
-.buttonsBox,
-.languageBox,
-.buttonsBox span {
-  display: flex;
-  align-items: center;
-}
-.logoBox,
-.searchBox,
-.buttonsBox {
-  flex-shrink: 0;
-}
-.logoBox {
-  margin-right: 40px;
-  width: 118px;
-  height: 34px;
-}
-.searchBox {
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  overflow: hidden;
-  flex: 1 1 594px;
-  max-width: 594px;
-  min-width: 0;
-}
-.searchBox input[type="text"] {
-  font-weight: 400;
-  font-size: 16px;
-  width: 100%;
-  padding: 12px;
-}
-.searchBox input[type="text"] + input[type="text"] {
-  border-left: 1px solid #d9d9d9;
-}
-.searchBox > span {
-  padding: 10px;
-}
-.searchBtn {
-  background-color: #f65858;
-  color: #ffffff;
-  outline: none;
-  padding: 14px;
-  cursor: pointer;
-}
-.searchBtn > img {
-  width: 16px;
-}
-.buttonsBox {
-  margin-left: auto;
-  gap: 22px;
-}
-.languageBox {
-  gap: 4px;
-}
-.languageBox > button,
-.buttonsBox > button {
-  font-weight: 500;
-  font-size: 14px;
-  background-color: #ffffff;
-}
-
-.buttonsBox .signBtn {
-  color: #ffffff;
-  background-color: #00798a;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-/*=============sideRight===============*/
 /*===============sideRight top=============*/
 .sideRight {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 h1 {
@@ -156,21 +52,20 @@ select.filter {
   background-repeat: no-repeat;
   background-position: right 16px center;
 }
-/*===============sideRight grid=============*/
+/*===============sideRight=============*/
 .sideRight {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
   min-width: 0;
 }
-.examplesPart {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 40px;
-  margin-bottom: 100px;
-}
-.eventCard {
+.eventNewYorkBox {
   display: flex;
+  flex-direction: column;
+}
+.event {
+  display: flex;
+  flex-direction: row;
   gap: 12px;
   border-top: 1px solid #d9d9d9;
   padding-top: 16px;
@@ -202,8 +97,11 @@ select.filter {
 }
 .cardImage {
   flex-shrink: 0;
-  width: 272px;
-  height: 153px;
+  width: 160px;
+  height: 90px;
+}
+time > img {
+  display: none;
 }
 .cardImage > img {
   width: 100%;
@@ -212,16 +110,21 @@ select.filter {
   display: block;
   border-radius: 8px;
 }
-.cardContent > span {
+.cardContent .subject {
+  order: 3;
+}
+.cardContent time {
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
   color: #7c6f50;
+  order: 1;
 }
 .cardContent h3 {
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
+  order: 2;
 }
 .cardMeta {
   display: flex;
@@ -232,9 +135,10 @@ select.filter {
   font-weight: 400;
   line-height: 20px;
   color: #707070;
+  order: 4;
 }
-.redString {
-  color: #e32359;
+.free {
+  display: none;
 }
 /*===============sideLeft============*/
 .sideLeft {
@@ -300,84 +204,7 @@ select.filter {
   height: 16px;
   cursor: pointer;
 }
-/*==========footer==========*/
-footer {
-  margin-top: 54px;
-  margin-bottom: 40px;
-  background-color: #212121;
-  padding-bottom: 40px;
-  padding-top: 16px;
-}
-.footerTop {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-bottom: 1px solid#707070;
-  padding: 24px 16px;
-}
-.footerTop > button {
-  padding: 10px 14px;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  background-color: #212121;
-}
-.footerTop > h2,
-.column > h3,
-h4 {
-  font-size: 16px;
-  line-height: 24px;
-  color: #f6f7f8;
-}
-.navigationGrid {
-  display: flex;
-  margin-top: 24px;
-}
-.column > a {
-  font-size: 14px;
-  line-height: 20px;
-  color: #c5c4c4;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 7px;
-}
-.iconsFollow {
-  margin-top: 12px;
-  display: flex;
-  gap: 32px;
-}
-.storesFollow {
-  display: flex;
-  gap: 12px;
-}
-.follow {
-  display: flex;
-  justify-content: space-between;
-}
-nav {
-  display: flex;
-  margin-top: 52px;
-  gap: 24px;
-}
-nav > a,
-nav > span {
-  color: #c5c4c4;
-  font-size: 14px;
-  line-height: 20px;
-}
-nav > span {
-  color: #ffffff;
-}
-.socialMedia {
-  width: 25px;
-  height: 25px;
-}
-.store {
-  width: 135px;
-  height: 40px;
-}
+
 /*========================================================
 =================================adaptiv==================*/
 @media (max-width: 1220px) {
@@ -387,19 +214,6 @@ nav > span {
   .container {
     padding-inline: 24px;
   }
-  /*хедер*/
-  .searchBox input[type="text"] + input[type="text"] {
-    display: none;
-  }
-  .searchBox {
-    margin-right: 11px;
-  }
-
-  /*footer*/
-  .footerTop {
-    padding: 24px 16px;
-    gap: 16px;
-  }
 }
 /*==========================================
 ==========================================*/
@@ -407,32 +221,7 @@ nav > span {
   main > .container {
     margin-top: 22px;
   }
-  /*header */
-  header > .container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 11px;
-  }
-  .logoBox {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-  }
-  .buttonsBox {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-  }
-  .searchBox {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    max-width: 70%;
-  }
-  .languageBox button,
-  .buttonsBox > button,
-  .textBox > p {
-    font-size: 14px;
-  }
+
   /*sideRight topPart*/
   .topPart > h1 {
     margin-bottom: 20px;
@@ -466,7 +255,7 @@ nav > span {
     gap: 6px;
     min-width: 0;
   }
-  .cardContent > span {
+  .cardContent > time {
     font-size: 13px;
     line-height: 15px;
     font-weight: 500;
@@ -515,38 +304,12 @@ nav > span {
   .filter {
     flex-shrink: 0;
   }
-  /*footer*/
-  .footerTop {
-    border-bottom: none;
-  }
-  .footerTop > h2 {
-    padding-bottom: 24px;
-    border-bottom: 1px solid #707070;
-  }
-  .footerTop > button {
-    align-self: flex-start;
-  }
-  .storesFollow {
-    display: none;
-  }
-  nav > a {
-    display: none;
-  }
 }
 /*==========================================
 ==========================================*/
 @media (max-width: 390px) {
   main > .container {
     margin-top: 18px;
-  }
-  /*header*/
-  .searchBox {
-    max-width: 100%;
-  }
-  .languageBox button,
-  .buttonsBox > button,
-  .textBox > p {
-    font-size: 12px;
   }
   /*sideRight topPart*/
   .topPart > h1 {
@@ -557,7 +320,7 @@ nav > span {
   .headBox {
     margin-top: 15px;
   }
-  .cardContent > span {
+  .cardContent > time {
     font-size: 9px;
     line-height: 13px;
   }
