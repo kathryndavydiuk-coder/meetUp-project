@@ -37,6 +37,8 @@ h1 {
 .textBox {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex: 1 1 600px;
   max-width: 600px;
   min-width: 0;
@@ -146,7 +148,6 @@ h1 {
 .subBox {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #97cad114;
   padding: 32px 112px 24px 24px;
   gap: 16px;
@@ -203,11 +204,9 @@ h1 {
 
 /*========================================================
 =================================adaptiv==================*/
-@media (max-width: 1220px) {
+@media (max-width: 1280px) {
   /*хиро */
-  .hero {
-    margin: 48px 0;
-  }
+
   .hero > .container {
     gap: 24px;
   }
@@ -301,6 +300,9 @@ h1 {
   }
 
   /*hero*/
+  .hero {
+    margin: 50px auto;
+  }
   .hero > .container {
     flex-direction: column;
     align-items: center;
@@ -331,44 +333,45 @@ h1 {
     height: 152px;
   }
   /*join Meetup*/
+  .joinMeetUp {
+    background-color: #97cad114;
+  }
   .joinCard {
-    flex-direction: column-reverse;
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
   }
   .joinText {
     max-width: 100%;
     padding: 24px;
     align-items: center;
+    display: contents;
     text-align: center;
+  }
+  .joinText > p {
+    order: 3;
   }
   .signUpBtn2 {
     align-self: center;
+    order: 4;
   }
   .imgBox {
     padding: 20px 24px;
+    order: 2;
   }
   .imgBox > img {
     width: 238px;
     height: 136px;
   }
-
-  .joinText {
-    max-width: 100%;
-    padding: 24px;
-    align-items: center;
-    text-align: center;
-  }
-  .signUpBtn2 {
-    align-self: center;
-  }
   .joinText > h3 {
     line-height: 25px;
     font-size: 20px;
     font-weight: 36px;
-  }
-  .imgBox {
-    padding: 20px 24px;
+    align-self: flex-start;
+    padding: 25px;
+    order: 1;
   }
 
   /*categories*/
@@ -443,7 +446,11 @@ h1 {
 /*==========================================
 ==========================================*/
 @media (max-width: 390px) {
+  .hero {
+    margin: 20px auto;
+  }
   .changeIcon > h2,
+  .textBox > h1,
   .headBox > h2,
   .joinText > h3,
   .container > h3,
@@ -470,7 +477,6 @@ h1 {
 
   /*explore categoories*/
   .allCategories {
-    margin-left: 54px;
     margin-right: 17px;
     display: grid;
     grid-template-columns: repeat(2, 2fr);

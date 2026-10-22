@@ -16,6 +16,11 @@ h1 {
   font-size: 28px;
   font-weight: 600;
   line-height: 36px;
+  margin: 10px;
+}
+.topPart {
+  display: flex;
+  flex-direction: column;
 }
 .topPart > span {
   font-size: 20px;
@@ -26,8 +31,11 @@ h1 {
   text-decoration-color: #00798a;
   text-decoration-thickness: 4px;
   text-underline-offset: 7px;
+  margin: 10px;
 }
 .eventFilters {
+  flex-wrap: nowrap;
+  width: 100%;
   display: flex;
   align-items: center;
   margin-top: 12px;
@@ -42,7 +50,7 @@ select.filter {
   border-radius: 40px;
   background-color: #f6f7f8;
   color: #212121;
-  padding: 16px 42px 16px 18px;
+  padding: 16px 48px 18px 18px;
   outline: none;
 
   appearance: none;
@@ -50,6 +58,7 @@ select.filter {
 
   background-image: url("/assets/icons/arrow.svg");
   background-repeat: no-repeat;
+  background-size: 12px 12px;
   background-position: right 16px center;
 }
 /*===============sideRight=============*/
@@ -74,8 +83,8 @@ select.filter {
 }
 .eventBadge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 8px;
+  left: 8px;
   z-index: 1;
 
   background-color: #ffffff;
@@ -96,6 +105,8 @@ select.filter {
   gap: 4px;
 }
 .cardImage {
+  position: relative;
+  margin-bottom: 60px;
   flex-shrink: 0;
   width: 160px;
   height: 90px;
@@ -207,10 +218,14 @@ time > img {
 
 /*========================================================
 =================================adaptiv==================*/
-@media (max-width: 1220px) {
+@media (max-width: 1280px) {
   .sideLeft {
     display: none;
   }
+  main > .container {
+    margin: 22px 30px;
+  }
+
   .container {
     padding-inline: 24px;
   }
@@ -218,20 +233,21 @@ time > img {
 /*==========================================
 ==========================================*/
 @media (max-width: 890px) {
-  main > .container {
-    margin-top: 22px;
-  }
-
   /*sideRight topPart*/
   .topPart > h1 {
     margin-bottom: 20px;
   }
-
+  main > .container {
+    margin: 22px 20px;
+  }
   /*events*/
   .container {
     padding-inline: 16px;
   }
-  .examplesPart {
+  .eventBadge {
+    display: none;
+  }
+  .eventNewYorkBox {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -242,8 +258,8 @@ time > img {
     margin-top: 24px;
   }
   .cardImage {
-    width: 160px;
-    height: 90px;
+    width: 98px;
+    height: 55px;
   }
   .eventCard {
     display: flex;
@@ -255,6 +271,9 @@ time > img {
     gap: 6px;
     min-width: 0;
   }
+  .cardContent > .subject {
+    order: 3;
+  }
   .cardContent > time {
     font-size: 13px;
     line-height: 15px;
@@ -262,10 +281,14 @@ time > img {
     color: #7c6f50;
     overflow-wrap: break-word;
   }
+  .cardContent > .calendar {
+    order: 1;
+  }
   .cardContent h3 {
     font-size: 16px;
     line-height: 22px;
     font-weight: 500;
+    order: 2;
     overflow-wrap: break-word;
   }
   .cardMeta {
@@ -282,15 +305,13 @@ time > img {
   .redString {
     color: #e32359;
   }
-  .eventBadge {
-    position: static;
-    font-size: 11px;
-    line-height: 14px;
-    gap: 3px;
-  }
+
   .eventBadge > img {
     width: 12px;
     height: 10px;
+  }
+  .cardMeta {
+    display: none;
   }
   /*filters*/
   .eventFilters {
@@ -301,8 +322,10 @@ time > img {
     padding-bottom: 10px;
     margin-bottom: 16px;
   }
+
   .filter {
     flex-shrink: 0;
+    min-width: max-content;
   }
 }
 /*==========================================
