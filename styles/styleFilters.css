@@ -56,7 +56,7 @@ select.filter {
   appearance: none;
   -webkit-appearance: none;
 
-  background-image: url("/assets/icons/arrow.svg");
+  background-image: url("assets/icons/arrow.svg");
   background-repeat: no-repeat;
   background-size: 12px 12px;
   background-position: right 16px center;
