@@ -330,7 +330,7 @@ time > img {
 }
 /*==========================================
 ==========================================*/
-@media (max-width: 390px) {
+@media (max-width: 389px) {
   main > .container {
     margin-top: 18px;
   }
